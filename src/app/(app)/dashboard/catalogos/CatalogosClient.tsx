@@ -43,7 +43,6 @@ export default function CatalogosClient({ contratadores, tiposContrato, servicio
           </form>
           {contratadorState?.message && <p className="mt-2 text-sm text-gray-600">{contratadorState.message}</p>}
         </div>
-        {/* ... (tabla de contratadores, si se quiere mostrar) ... */}
       </section>
 
       {/* SECCIÓN DE TIPOS DE CONTRATO */}
@@ -63,14 +62,14 @@ export default function CatalogosClient({ contratadores, tiposContrato, servicio
           </form>
           {tipoContratoState?.message && <p className="mt-2 text-sm text-gray-600">{tipoContratoState.message}</p>}
         </div>
-         {/* ... (tabla de tipos de contrato) ... */}
       </section>
-
+      
       {/* SECCIÓN DE SERVICIOS */}
       <section>
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Servicios</h2>
         <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-          <form action={addServicio} className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+          {/* LA CORRECCIÓN ESTÁ EN LA SIGUIENTE LÍNEA */}
+          <form action={servicioAction} className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
              <div className="md:col-span-1">
               <label htmlFor="nombre_servicio" className="block text-sm font-medium text-gray-700">Nombre del Servicio</label>
               <input type="text" name="nombre" id="nombre_servicio" required className="input-field" />
@@ -83,7 +82,6 @@ export default function CatalogosClient({ contratadores, tiposContrato, servicio
           </form>
           {servicioState?.message && <p className="mt-2 text-sm text-gray-600">{servicioState.message}</p>}
         </div>
-         {/* ... (tabla de servicios) ... */}
       </section>
     </div>
   );
